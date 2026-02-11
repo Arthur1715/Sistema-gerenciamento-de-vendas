@@ -3,207 +3,248 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📊 Relatório de Vendas - Sistema Profissional</title>
+    <title>Analista de Dados | Python • SQL • Visualização</title>
     
-    <!-- CSS Separado -->
-    <link rel="stylesheet" href="../static/css/estilo.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
     
-    <!-- Fallback CSS inline caso o arquivo não seja encontrado -->
-    <style>
-        /* Fallback styles - apenas o básico para garantir funcionamento */
-        body { 
-            background: #0a1929; 
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            padding: 20px;
-            color: white;
-        }
-        .container { 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            background: #1e293b;
-            padding: 30px;
-            border-radius: 20px;
-        }
-    </style>
+    <!-- Font Awesome Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        
-        <!-- ===== HEADER ===== -->
-        <div class="header">
-            <h1>
-                <span>📊</span> 
-                RELATÓRIO DE VENDAS
-                <span>📈</span>
-            </h1>
-            <p>Análise completa de desempenho comercial • Sistema Profissional</p>
-            <div class="data-geracao">
-                ⏱️ Gerado em: {{DATA_GERACAO}}
-            </div>
-        </div>
-
-        <!-- ===== MÉTRICAS PRINCIPAIS ===== -->
-        <div class="metrics-grid">
-            <div class="metric-card" data-color="green">
-                <div class="metric-icon">💰</div>
-                <div class="metric-label">VENDAS TOTAIS</div>
-                <div class="metric-value" style="color: #22c55e;">
-                    R$ {{VALOR_TOTAL}}
-                </div>
-            </div>
-
-            <div class="metric-card" data-color="blue">
-                <div class="metric-icon">📦</div>
-                <div class="metric-label">TOTAL DE VENDAS</div>
-                <div class="metric-value" style="color: #3b82f6;">
-                    {{TOTAL_VENDAS}}
-                </div>
-            </div>
-
-            <div class="metric-card" data-color="purple">
-                <div class="metric-icon">🎫</div>
-                <div class="metric-label">TICKET MÉDIO</div>
-                <div class="metric-value" style="color: #a855f7;">
-                    R$ {{TICKET_MEDIO}}
-                </div>
-            </div>
-
-            <div class="metric-card" data-color="yellow">
-                <div class="metric-icon">👥</div>
-                <div class="metric-label">VENDEDORES</div>
-                <div class="metric-value" style="color: #f59e0b;">
-                    {{TOTAL_VENDEDORES}}
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Analista de Dados</h1>
+                <h2>Python • SQL • Visualização • Relatórios HTML</h2>
+                <p>Transformando dados em decisões de negócio</p>
+                <div class="hero-buttons">
+                    <a href="#projeto" class="btn btn-primary">Ver Projeto</a>
+                    <a href="https://github.com/seu-usuario/sistema-vendas-portfolio" class="btn btn-outline">GitHub</a>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- ===== RANKING DE VENDEDORES ===== -->
-        <div class="section-title">
-            <span>🏆</span> RANKING DE VENDEDORES
-        </div>
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Posição</th>
-                        <th>Vendedor</th>
-                        <th>Total de Vendas</th>
-                        <th>Participação</th>
-                        <th>Ticket Médio</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{RANKING_VENDEDORES}}
-                </tbody>
-            </table>
-        </div>
-
-        <!-- ===== PRODUTOS MAIS VENDIDOS ===== -->
-        <div class="section-title">
-            <span>📦</span> PRODUTOS MAIS VENDIDOS
-        </div>
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Posição</th>
-                        <th>Produto</th>
-                        <th>Quantidade</th>
-                        <th>Valor Total</th>
-                        <th>Participação</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{TOP_PRODUTOS}}
-                </tbody>
-            </table>
-        </div>
-
-        <!-- ===== VENDAS POR REGIÃO ===== -->
-        <div class="section-title">
-            <span>🌍</span> ANÁLISE POR REGIÃO
-        </div>
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Região</th>
-                        <th>Vendas</th>
-                        <th>Valor Total</th>
-                        <th>Participação</th>
-                        <th>Ticket Médio</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{VENDAS_REGIAO}}
-                </tbody>
-            </table>
-        </div>
-
-        <!-- ===== INSIGHTS E RECOMENDAÇÕES ===== -->
-        <div class="section-title">
-            <span>💡</span> INSIGHTS E RECOMENDAÇÕES
-        </div>
-        <div class="insights-grid">
-            <div class="insight-card" style="border-top-color: #22c55e;">
-                <div class="insight-title">🎯 MELHOR VENDEDOR</div>
-                <div class="insight-content">{{MELHOR_VENDEDOR}}</div>
-                <div class="insight-detail">R$ {{MELHOR_VENDEDOR_VALOR}} em vendas</div>
-            </div>
-
-            <div class="insight-card" style="border-top-color: #3b82f6;">
-                <div class="insight-title">📦 PRODUTO DESTAQUE</div>
-                <div class="insight-content">{{MELHOR_PRODUTO}}</div>
-                <div class="insight-detail">R$ {{MELHOR_PRODUTO_VALOR}} em vendas</div>
-            </div>
-
-            <div class="insight-card" style="border-top-color: #a855f7;">
-                <div class="insight-title">🌍 REGIÃO DESTAQUE</div>
-                <div class="insight-content">{{MELHOR_REGIAO}}</div>
-                <div class="insight-detail">{{MELHOR_REGIAO_PERC}} das vendas</div>
-            </div>
-
-            <div class="insight-card" style="border-top-color: #f59e0b;">
-                <div class="insight-title">📊 OPORTUNIDADE</div>
-                <div class="insight-content">{{OPORTUNIDADE}}</div>
-                <div class="insight-detail">{{OPORTUNIDADE_DETALHE}}</div>
+    <!-- SOBRE -->
+    <section class="sobre">
+        <div class="container">
+            <h2 class="section-title">Sobre Mim</h2>
+            <div class="sobre-grid">
+                <div class="sobre-texto">
+                    <p>Analista de Dados com foco em transformar dados brutos em insights acionáveis. Experiência com Python, SQL, visualização de dados e relatórios interativos.</p>
+                    <p><strong>Buscando primeira oportunidade como Analista de Dados Júnior.</strong></p>
+                    
+                    <div class="skills">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">Tkinter</span>
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">CSV</span>
+                        <span class="skill-tag">Git</span>
+                    </div>
+                </div>
+                <div class="sobre-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Projetos</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">Python</div>
+                        <div class="stat-label">Principal</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">SQL</div>
+                        <div class="stat-label">Consultas</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">HTML/CSS</div>
+                        <div class="stat-label">Relatórios</div>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- ===== ÚLTIMAS VENDAS ===== -->
-        <div class="section-title">
-            <span>📋</span> ÚLTIMAS TRANSAÇÕES
+    <!-- PROJETO DESTAQUE -->
+    <section id="projeto" class="projeto-destaque">
+        <div class="container">
+            <h2 class="section-title">Projeto em Destaque</h2>
+            <h3 class="section-subtitle">Sistema de Gerenciamento de Vendas com Relatórios HTML</h3>
+            
+            <div class="projeto-card">
+                <div class="projeto-header">
+                    <div class="projeto-tags">
+                        <span class="tag tag-python">Python</span>
+                        <span class="tag tag-tkinter">Tkinter</span>
+                        <span class="tag tag-html">HTML5</span>
+                        <span class="tag tag-css">CSS3</span>
+                        <span class="tag tag-csv">CSV</span>
+                    </div>
+                </div>
+                
+                <div class="projeto-grid">
+                    <div class="projeto-info">
+                        <h4>🔍 Funcionalidades</h4>
+                        <ul>
+                            <li>✅ Cadastro completo de vendas</li>
+                            <li>✅ Dashboard com métricas em tempo real</li>
+                            <li>✅ Relatórios HTML profissionais</li>
+                            <li>✅ Análise por vendedor/produto/região</li>
+                            <li>✅ Exportação para CSV</li>
+                            <li>✅ Persistência de dados</li>
+                        </ul>
+                        
+                        <h4>📊 Análises Realizadas</h4>
+                        <ul>
+                            <li>• Vendas totais e ticket médio</li>
+                            <li>• Ranking de vendedores</li>
+                            <li>• Produtos mais vendidos</li>
+                            <li>• Performance por região</li>
+                            <li>• Insights automáticos</li>
+                        </ul>
+                        
+                        <div class="projeto-links">
+                            <a href="relatorio-exemplo.html" class="btn btn-primary" target="_blank">
+                                <i class="fas fa-chart-bar"></i> Ver Relatório Exemplo
+                            </a>
+                            <a href="https://github.com/seu-usuario/sistema-vendas-portfolio" class="btn btn-secondary">
+                                <i class="fab fa-github"></i> Código Fonte
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="projeto-screenshots">
+                        <div class="screenshot-card">
+                            <img src="assets/screenshot1.png" alt="Sistema Principal">
+                            <p>Interface Tkinter</p>
+                        </div>
+                        <div class="screenshot-card">
+                            <img src="assets/screenshot2.png" alt="Relatório HTML">
+                            <p>Relatório HTML/CSS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Data</th>
-                        <th>Vendedor</th>
-                        <th>Produto</th>
-                        <th>Qtd</th>
-                        <th>Preço Unit.</th>
-                        <th>Total</th>
-                        <th>Região</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{ULTIMAS_VENDAS}}
-                </tbody>
-            </table>
-        </div>
+    </section>
 
-        <!-- ===== FOOTER ===== -->
-        <div class="footer">
-            <p>📊 Relatório gerado automaticamente pelo Sistema de Gerenciamento de Vendas</p>
-            <div class="badge badge-success">Python</div>
-            <div class="badge badge-info" style="margin-left: 10px;">Tkinter</div>
-            <div class="badge badge-warning" style="margin-left: 10px;">HTML5</div>
-            <div class="badge badge-danger" style="margin-left: 10px;">CSS3</div>
-            <p class="assinatura">{{ASSINATURA}}</p>
-            <p style="margin-top: 20px; font-size: 12px;">© 2024 - Todos os direitos reservados</p>
+    <!-- RELATÓRIO EXEMPLO (PRÉ-VISUALIZAÇÃO) -->
+    <section class="relatorio-preview">
+        <div class="container">
+            <h2 class="section-title">Relatório Gerado pelo Sistema</h2>
+            <p class="section-subtitle">Exemplo real de saída do programa</p>
+            
+            <div class="preview-card">
+                <iframe src="relatorio-exemplo.html" frameborder="0" class="preview-iframe"></iframe>
+                <div class="preview-overlay">
+                    <a href="relatorio-exemplo.html" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-external-link-alt"></i> Abrir Relatório Completo
+                    </a>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <!-- HABILIDADES TÉCNICAS -->
+    <section class="habilidades">
+        <div class="container">
+            <h2 class="section-title">Habilidades Técnicas</h2>
+            
+            <div class="habilidades-grid">
+                <div class="habilidade-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Python</h3>
+                    <p>Pandas, Tkinter, CSV, POO</p>
+                </div>
+                <div class="habilidade-card">
+                    <i class="fas fa-database"></i>
+                    <h3>SQL</h3>
+                    <p>Consultas, Joins, Agregações</p>
+                </div>
+                <div class="habilidade-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Análise de Dados</h3>
+                    <p>Estatística, Insights, Métricas</p>
+                </div>
+                <div class="habilidade-card">
+                    <i class="fas fa-file-code"></i>
+                    <h3>HTML/CSS</h3>
+                    <p>Relatórios profissionais, Responsivo</p>
+                </div>
+                <div class="habilidade-card">
+                    <i class="fas fa-table"></i>
+                    <h3>CSV/Excel</h3>
+                    <p>Importação, Exportação, Manipulação</p>
+                </div>
+                <div class="habilidade-card">
+                    <i class="fab fa-github"></i>
+                    <h3>Git/GitHub</h3>
+                    <p>Versionamento, Documentação</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMO EXECUTAR -->
+    <section class="como-executar">
+        <div class="container">
+            <h2 class="section-title">Como Executar o Projeto</h2>
+            
+            <div class="code-block">
+                <pre><code># 1. Clone o repositório
+git clone https://github.com/seu-usuario/sistema-vendas-portfolio.git
+
+# 2. Entre na pasta
+cd sistema-vendas-portfolio
+
+# 3. Execute o sistema
+python sistema_vendas.py</code></pre>
+            </div>
+            
+            <div class="requisitos">
+                <h4>📋 Requisitos:</h4>
+                <ul>
+                    <li>Python 3.8+</li>
+                    <li>Não precisa instalar bibliotecas extras!</li>
+                    <li>Windows/Linux/Mac</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="contato">
+        <div class="container">
+            <h2 class="section-title">Vamos conversar?</h2>
+            <p>Estou disponível para oportunidades como Analista de Dados Júnior</p>
+            
+            <div class="social-links">
+                <a href="https://linkedin.com/in/seu-perfil" class="social-link linkedin">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/seu-usuario" class="social-link github">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="mailto:seu.email@email.com" class="social-link email">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>© 2024 - Portfólio de Analista de Dados</p>
+            <p>Projeto demonstrativo • Código aberto • Feedbacks são bem-vindos!</p>
+        </div>
+    </footer>
 </body>
 </html>
