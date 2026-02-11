@@ -3,248 +3,257 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analista de Dados | Python • SQL • Visualização</title>
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
-    
-    <!-- Font Awesome Ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <title>Analista de Dados | Portfólio Profissional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #0a1929, #0f2744);
+            color: white;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .hero {
+            text-align: center;
+            padding: 80px 0;
+        }
+        h1 {
+            font-size: 48px;
+            color: #3b82f6;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 24px;
+            color: #94a3b8;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: #3b82f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            margin: 10px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #3b82f6;
+        }
+        .card {
+            background: #1e293b;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            border-left: 5px solid #3b82f6;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #94a3b8;
+            border-top: 1px solid #1e293b;
+            margin-top: 60px;
+        }
+        .error-box {
+            background: #ef4444;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+    </style>
 </head>
 <body>
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Analista de Dados</h1>
-                <h2>Python • SQL • Visualização • Relatórios HTML</h2>
-                <p>Transformando dados em decisões de negócio</p>
-                <div class="hero-buttons">
-                    <a href="#projeto" class="btn btn-primary">Ver Projeto</a>
-                    <a href="https://github.com/seu-usuario/sistema-vendas-portfolio" class="btn btn-outline">GitHub</a>
+    <div class="container">
+        <!-- HERO SECTION -->
+        <div class="hero">
+            <h1>📊 Analista de Dados</h1>
+            <h2>Python • SQL • Visualização • Relatórios HTML</h2>
+            <p style="font-size: 20px; margin-bottom: 40px; color: white;">
+                Transformando dados em decisões de negócio
+            </p>
+            <a href="#projeto" class="btn">Ver Projeto</a>
+            <a href="https://github.com/seu-usuario/sistema-vendas-portfolio" class="btn btn-outline">GitHub</a>
+        </div>
+
+        <!-- AVISO IMPORTANTE -->
+        <div style="background: #f59e0b; color: black; padding: 20px; border-radius: 10px; margin-bottom: 30px;">
+            <strong>⚠️ ATENÇÃO RECRUTADOR:</strong> Este é meu portfólio estático. 
+            O sistema completo em Python está no repositório GitHub! 
+            <a href="https://github.com/seu-usuario/sistema-vendas-portfolio" style="color: black; font-weight: bold;">Clique aqui para ver o código</a>
+        </div>
+
+        <!-- SOBRE O PROJETO -->
+        <div class="card">
+            <h2 style="color: #3b82f6; margin-bottom: 20px;">🎯 SISTEMA DE GERENCIAMENTO DE VENDAS</h2>
+            <p style="font-size: 18px; margin-bottom: 30px;">
+                Projeto completo desenvolvido em Python com interface gráfica Tkinter e geração de relatórios HTML/CSS profissionais.
+            </p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                <div>
+                    <h3 style="color: #22c55e; margin-bottom: 15px;">✅ Funcionalidades</h3>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 10px;">• Cadastro completo de vendas</li>
+                        <li style="margin-bottom: 10px;">• Dashboard com métricas em tempo real</li>
+                        <li style="margin-bottom: 10px;">• Relatórios HTML profissionais</li>
+                        <li style="margin-bottom: 10px;">• Análise por vendedor/produto/região</li>
+                        <li style="margin-bottom: 10px;">• Exportação para CSV</li>
+                        <li style="margin-bottom: 10px;">• Persistência de dados</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: #a855f7; margin-bottom: 15px;">🛠️ Tecnologias</h3>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 10px;">• Python 3.11</li>
+                        <li style="margin-bottom: 10px;">• Tkinter (Interface Gráfica)</li>
+                        <li style="margin-bottom: 10px;">• HTML5 + CSS3 (Relatórios)</li>
+                        <li style="margin-bottom: 10px;">• CSV (Banco de Dados)</li>
+                        <li style="margin-bottom: 10px;">• Git/GitHub</li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- SOBRE -->
-    <section class="sobre">
-        <div class="container">
-            <h2 class="section-title">Sobre Mim</h2>
-            <div class="sobre-grid">
-                <div class="sobre-texto">
-                    <p>Analista de Dados com foco em transformar dados brutos em insights acionáveis. Experiência com Python, SQL, visualização de dados e relatórios interativos.</p>
-                    <p><strong>Buscando primeira oportunidade como Analista de Dados Júnior.</strong></p>
+        <!-- RELATÓRIO EXEMPLO -->
+        <div id="projeto" style="margin: 60px 0;">
+            <h2 style="color: white; text-align: center; margin-bottom: 30px;">📊 RELATÓRIO GERADO PELO SISTEMA</h2>
+            <p style="text-align: center; color: #94a3b8; margin-bottom: 30px;">
+                Exemplo real do relatório HTML gerado automaticamente pelo meu sistema Python
+            </p>
+            
+            <div style="background: white; border-radius: 10px; padding: 20px; margin-bottom: 30px;">
+                <iframe src="relatorio-exemplo.html" style="width: 100%; height: 500px; border: none; border-radius: 5px;"></iframe>
+            </div>
+            
+            <div style="text-align: center;">
+                <a href="relatorio-exemplo.html" target="_blank" class="btn" style="background: #22c55e;">
+                    🔍 ABRIR RELATÓRIO COMPLETO
+                </a>
+            </div>
+        </div>
+
+        <!-- COMO EXECUTAR -->
+        <div class="card" style="border-left-color: #22c55e;">
+            <h2 style="color: #22c55e; margin-bottom: 20px;">🚀 COMO EXECUTAR O SISTEMA</h2>
+            
+            <div style="background: #0f172a; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                <code style="color: #22c55e; font-size: 16px;">
+                    # 1. Clone o repositório<br>
+                    git clone https://github.com/seu-usuario/sistema-vendas-portfolio.git<br><br>
                     
-                    <div class="skills">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">Pandas</span>
-                        <span class="skill-tag">Tkinter</span>
-                        <span class="skill-tag">HTML5</span>
-                        <span class="skill-tag">CSS3</span>
-                        <span class="skill-tag">CSV</span>
-                        <span class="skill-tag">Git</span>
-                    </div>
-                </div>
-                <div class="sobre-stats">
-                    <div class="stat-card">
-                        <div class="stat-number">5+</div>
-                        <div class="stat-label">Projetos</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">Python</div>
-                        <div class="stat-label">Principal</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">SQL</div>
-                        <div class="stat-label">Consultas</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">HTML/CSS</div>
-                        <div class="stat-label">Relatórios</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PROJETO DESTAQUE -->
-    <section id="projeto" class="projeto-destaque">
-        <div class="container">
-            <h2 class="section-title">Projeto em Destaque</h2>
-            <h3 class="section-subtitle">Sistema de Gerenciamento de Vendas com Relatórios HTML</h3>
-            
-            <div class="projeto-card">
-                <div class="projeto-header">
-                    <div class="projeto-tags">
-                        <span class="tag tag-python">Python</span>
-                        <span class="tag tag-tkinter">Tkinter</span>
-                        <span class="tag tag-html">HTML5</span>
-                        <span class="tag tag-css">CSS3</span>
-                        <span class="tag tag-csv">CSV</span>
-                    </div>
-                </div>
-                
-                <div class="projeto-grid">
-                    <div class="projeto-info">
-                        <h4>🔍 Funcionalidades</h4>
-                        <ul>
-                            <li>✅ Cadastro completo de vendas</li>
-                            <li>✅ Dashboard com métricas em tempo real</li>
-                            <li>✅ Relatórios HTML profissionais</li>
-                            <li>✅ Análise por vendedor/produto/região</li>
-                            <li>✅ Exportação para CSV</li>
-                            <li>✅ Persistência de dados</li>
-                        </ul>
-                        
-                        <h4>📊 Análises Realizadas</h4>
-                        <ul>
-                            <li>• Vendas totais e ticket médio</li>
-                            <li>• Ranking de vendedores</li>
-                            <li>• Produtos mais vendidos</li>
-                            <li>• Performance por região</li>
-                            <li>• Insights automáticos</li>
-                        </ul>
-                        
-                        <div class="projeto-links">
-                            <a href="relatorio-exemplo.html" class="btn btn-primary" target="_blank">
-                                <i class="fas fa-chart-bar"></i> Ver Relatório Exemplo
-                            </a>
-                            <a href="https://github.com/seu-usuario/sistema-vendas-portfolio" class="btn btn-secondary">
-                                <i class="fab fa-github"></i> Código Fonte
-                            </a>
-                        </div>
-                    </div>
+                    # 2. Entre na pasta<br>
+                    cd sistema-vendas-portfolio<br><br>
                     
-                    <div class="projeto-screenshots">
-                        <div class="screenshot-card">
-                            <img src="assets/screenshot1.png" alt="Sistema Principal">
-                            <p>Interface Tkinter</p>
-                        </div>
-                        <div class="screenshot-card">
-                            <img src="assets/screenshot2.png" alt="Relatório HTML">
-                            <p>Relatório HTML/CSS</p>
-                        </div>
-                    </div>
+                    # 3. Execute o sistema<br>
+                    python sistema_vendas.py
+                </code>
+            </div>
+            
+            <p style="color: #94a3b8;">
+                <strong>📌 Requisitos:</strong> Python 3.8+ (NÃO precisa instalar bibliotecas extras!)
+            </p>
+        </div>
+
+        <!-- RESULTADOS -->
+        <div class="grid">
+            <div style="background: #1e293b; padding: 30px; border-radius: 15px;">
+                <h3 style="color: #3b82f6; margin-bottom: 15px;">📈 MÉTRICAS</h3>
+                <div style="font-size: 36px; font-weight: bold; color: white;">45+</div>
+                <div style="color: #94a3b8;">Vendas processadas</div>
+                <div style="font-size: 36px; font-weight: bold; color: white; margin-top: 20px;">R$ 45k+</div>
+                <div style="color: #94a3b8;">Valor analisado</div>
+            </div>
+            
+            <div style="background: #1e293b; padding: 30px; border-radius: 15px;">
+                <h3 style="color: #a855f7; margin-bottom: 15px;">🏆 RANKING</h3>
+                <div style="margin-bottom: 15px;">
+                    <span style="color: #3b82f6;">1º</span> Ana Oliveira - R$ 12.345,67
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <span style="color: #94a3b8;">2º</span> João Santos - R$ 10.234,56
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <span style="color: #94a3b8;">3º</span> Maria Costa - R$ 9.123,45
+                </div>
+            </div>
+            
+            <div style="background: #1e293b; padding: 30px; border-radius: 15px;">
+                <h3 style="color: #f59e0b; margin-bottom: 15px;">📦 PRODUTOS</h3>
+                <div style="margin-bottom: 15px;">
+                    <span style="color: #22c55e;">1.</span> Notebook - 12 unidades
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <span style="color: #22c55e;">2.</span> Smartphone - 15 unidades
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <span style="color: #22c55e;">3.</span> Tablet - 8 unidades
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- RELATÓRIO EXEMPLO (PRÉ-VISUALIZAÇÃO) -->
-    <section class="relatorio-preview">
-        <div class="container">
-            <h2 class="section-title">Relatório Gerado pelo Sistema</h2>
-            <p class="section-subtitle">Exemplo real de saída do programa</p>
+        <!-- HABILIDADES -->
+        <div style="margin: 60px 0;">
+            <h2 style="color: white; text-align: center; margin-bottom: 40px;">💡 HABILIDADES DEMONSTRADAS</h2>
             
-            <div class="preview-card">
-                <iframe src="relatorio-exemplo.html" frameborder="0" class="preview-iframe"></iframe>
-                <div class="preview-overlay">
-                    <a href="relatorio-exemplo.html" target="_blank" class="btn btn-primary">
-                        <i class="fas fa-external-link-alt"></i> Abrir Relatório Completo
-                    </a>
-                </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+                <span style="background: #3b82f6; padding: 10px 20px; border-radius: 50px; font-weight: bold;">Python</span>
+                <span style="background: #22c55e; padding: 10px 20px; border-radius: 50px; font-weight: bold;">Tkinter</span>
+                <span style="background: #a855f7; padding: 10px 20px; border-radius: 50px; font-weight: bold;">HTML5</span>
+                <span style="background: #f59e0b; padding: 10px 20px; border-radius: 50px; font-weight: bold;">CSS3</span>
+                <span style="background: #06b6d4; padding: 10px 20px; border-radius: 50px; font-weight: bold;">CSV</span>
+                <span style="background: #ef4444; padding: 10px 20px; border-radius: 50px; font-weight: bold;">Git</span>
+                <span style="background: #3b82f6; padding: 10px 20px; border-radius: 50px; font-weight: bold;">POO</span>
+                <span style="background: #22c55e; padding: 10px 20px; border-radius: 50px; font-weight: bold;">Análise de Dados</span>
             </div>
         </div>
-    </section>
 
-    <!-- HABILIDADES TÉCNICAS -->
-    <section class="habilidades">
-        <div class="container">
-            <h2 class="section-title">Habilidades Técnicas</h2>
+        <!-- CONTATO -->
+        <div style="text-align: center; margin: 80px 0;">
+            <h2 style="color: white; margin-bottom: 20px;">📫 VAMOS CONVERSAR?</h2>
+            <p style="font-size: 18px; color: #94a3b8; margin-bottom: 30px;">
+                Estou buscando minha primeira oportunidade como Analista de Dados Júnior!
+            </p>
             
-            <div class="habilidades-grid">
-                <div class="habilidade-card">
-                    <i class="fas fa-code"></i>
-                    <h3>Python</h3>
-                    <p>Pandas, Tkinter, CSV, POO</p>
-                </div>
-                <div class="habilidade-card">
-                    <i class="fas fa-database"></i>
-                    <h3>SQL</h3>
-                    <p>Consultas, Joins, Agregações</p>
-                </div>
-                <div class="habilidade-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Análise de Dados</h3>
-                    <p>Estatística, Insights, Métricas</p>
-                </div>
-                <div class="habilidade-card">
-                    <i class="fas fa-file-code"></i>
-                    <h3>HTML/CSS</h3>
-                    <p>Relatórios profissionais, Responsivo</p>
-                </div>
-                <div class="habilidade-card">
-                    <i class="fas fa-table"></i>
-                    <h3>CSV/Excel</h3>
-                    <p>Importação, Exportação, Manipulação</p>
-                </div>
-                <div class="habilidade-card">
-                    <i class="fab fa-github"></i>
-                    <h3>Git/GitHub</h3>
-                    <p>Versionamento, Documentação</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- COMO EXECUTAR -->
-    <section class="como-executar">
-        <div class="container">
-            <h2 class="section-title">Como Executar o Projeto</h2>
-            
-            <div class="code-block">
-                <pre><code># 1. Clone o repositório
-git clone https://github.com/seu-usuario/sistema-vendas-portfolio.git
-
-# 2. Entre na pasta
-cd sistema-vendas-portfolio
-
-# 3. Execute o sistema
-python sistema_vendas.py</code></pre>
-            </div>
-            
-            <div class="requisitos">
-                <h4>📋 Requisitos:</h4>
-                <ul>
-                    <li>Python 3.8+</li>
-                    <li>Não precisa instalar bibliotecas extras!</li>
-                    <li>Windows/Linux/Mac</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTATO -->
-    <section class="contato">
-        <div class="container">
-            <h2 class="section-title">Vamos conversar?</h2>
-            <p>Estou disponível para oportunidades como Analista de Dados Júnior</p>
-            
-            <div class="social-links">
-                <a href="https://linkedin.com/in/seu-perfil" class="social-link linkedin">
-                    <i class="fab fa-linkedin"></i> LinkedIn
+            <div style="display: flex; justify-content: center; gap: 20px;">
+                <a href="https://linkedin.com/in/seu-perfil" style="background: #0077b5; padding: 12px 24px; border-radius: 50px; color: white; text-decoration: none; font-weight: bold;">
+                    LinkedIn
                 </a>
-                <a href="https://github.com/seu-usuario" class="social-link github">
-                    <i class="fab fa-github"></i> GitHub
+                <a href="https://github.com/seu-usuario" style="background: #333; padding: 12px 24px; border-radius: 50px; color: white; text-decoration: none; font-weight: bold;">
+                    GitHub
                 </a>
-                <a href="mailto:seu.email@email.com" class="social-link email">
-                    <i class="fas fa-envelope"></i> Email
+                <a href="mailto:seu.email@email.com" style="background: #ea4335; padding: 12px 24px; border-radius: 50px; color: white; text-decoration: none; font-weight: bold;">
+                    Email
                 </a>
             </div>
         </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <p>© 2024 - Portfólio de Analista de Dados</p>
-            <p>Projeto demonstrativo • Código aberto • Feedbacks são bem-vindos!</p>
+        <!-- FOOTER -->
+        <div class="footer">
+            <p>© 2026 - Portfólio de Analista de Dados</p>
+            <p style="margin-top: 10px;">Desenvolvido com Python • HTML • CSS • GitHub Pages</p>
+            <p style="margin-top: 20px; color: #3b82f6;">⚠️ Página estática - Código fonte disponível no repositório</p>
         </div>
-    </footer>
+    </div>
 </body>
 </html>
