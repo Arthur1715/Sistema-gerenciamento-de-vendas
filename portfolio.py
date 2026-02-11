@@ -1,15 +1,7 @@
 """
 SISTEMA DE GERENCIAMENTO DE VENDAS
 Arquitetura: HTML + CSS + Python separados
-
-Estrutura:
-├── sistema_vendas_separado.py  # Este arquivo
-├── templates/                  # HTML templates
-│   └── relatorio.html         # Estrutura HTML
-├── static/                    # Arquivos estáticos
-│   └── css/
-│       └── estilo.css        # Estilos CSS
-└── relatorios/               # Relatórios gerados
+SEM EMOJIS - Compatível com Windows
 """
 
 import tkinter as tk
@@ -23,7 +15,7 @@ from pathlib import Path
 class SistemaVendasProfissional:
     def __init__(self):
         self.janela = tk.Tk()
-        self.janela.title("📊 SISTEMA DE VENDAS - PORTFÓLIO PROFISSIONAL")
+        self.janela.title("SISTEMA DE VENDAS - PORTFOLIO PROFISSIONAL")
         self.janela.geometry("1300x750")
         self.janela.configure(bg='#0a1929')
         
@@ -47,7 +39,6 @@ class SistemaVendasProfissional:
     
     def configurar_pastas(self):
         """Criar estrutura de pastas do projeto"""
-        # Pastas necessárias
         pastas = [
             self.base_path / 'templates',
             self.base_path / 'static',
@@ -57,23 +48,6 @@ class SistemaVendasProfissional:
         
         for pasta in pastas:
             pasta.mkdir(exist_ok=True)
-            print(f"📁 Pasta verificada/criada: {pasta}")
-        
-        # Verificar se o template HTML existe
-        template_path = self.base_path / 'templates' / 'relatorio.html'
-        css_path = self.base_path / 'static/css/estilo.css'
-        
-        if not template_path.exists():
-            messagebox.showwarning(
-                "Template HTML não encontrado", 
-                f"Crie o arquivo:\n{template_path}\n\nO sistema continuará, mas relatórios HTML não funcionarão."
-            )
-        
-        if not css_path.exists():
-            messagebox.showwarning(
-                "CSS não encontrado", 
-                f"Crie o arquivo:\n{css_path}\n\nO sistema continuará, mas relatórios HTML não funcionarão."
-            )
     
     def configurar_estilo(self):
         """Configurar cores e estilos do Tkinter"""
@@ -94,11 +68,10 @@ class SistemaVendasProfissional:
     def criar_interface(self):
         """Criar interface Tkinter"""
         
-        # ============ HEADER ============
+        # HEADER
         header = tk.Frame(self.janela, bg=self.cores['bg_principal'], height=100)
         header.pack(fill='x', padx=30, pady=(20, 10))
         
-        # Título
         titulo = tk.Label(header, 
                          text="SISTEMA DE VENDAS",
                          font=('Arial', 32, 'bold'),
@@ -106,9 +79,8 @@ class SistemaVendasProfissional:
                          fg=self.cores['azul'])
         titulo.pack(anchor='w')
         
-        # Subtítulo
         subtitulo = tk.Label(header,
-                           text="Cadastro • Relatórios HTML • CSS Profissional",
+                           text="Cadastro • Relatorios HTML • CSS Profissional",
                            font=('Arial', 14),
                            bg=self.cores['bg_principal'],
                            fg=self.cores['texto_secundario'])
@@ -119,11 +91,11 @@ class SistemaVendasProfissional:
         badges_frame.pack(anchor='w', pady=(10, 0))
         
         techs = [
-            ("🐍 Python", self.cores['azul']),
-            ("🖥️ Tkinter", self.cores['verde']),
-            ("🌐 HTML5", self.cores['roxo']),
-            ("🎨 CSS3", self.cores['amarelo']),
-            ("📊 CSV", self.cores['ciano'])
+            ("Python", self.cores['azul']),
+            ("Tkinter", self.cores['verde']),
+            ("HTML5", self.cores['roxo']),
+            ("CSS3", self.cores['amarelo']),
+            ("CSV", self.cores['ciano'])
         ]
         
         for tech, cor in techs:
@@ -135,11 +107,11 @@ class SistemaVendasProfissional:
                            relief='flat')
             badge.pack(side='left', padx=(0, 10))
         
-        # ============ FRAME PRINCIPAL ============
+        # FRAME PRINCIPAL
         main_container = tk.Frame(self.janela, bg=self.cores['bg_principal'])
         main_container.pack(fill='both', expand=True, padx=30, pady=20)
         
-        # Dividir em 2 colunas (esquerda 30%, direita 70%)
+        # Dividir em 2 colunas
         coluna_esquerda = tk.Frame(main_container, bg=self.cores['bg_principal'], width=400)
         coluna_esquerda.pack(side='left', fill='both', padx=(0, 20))
         coluna_esquerda.pack_propagate(False)
@@ -147,22 +119,14 @@ class SistemaVendasProfissional:
         coluna_direita = tk.Frame(main_container, bg=self.cores['bg_principal'])
         coluna_direita.pack(side='right', fill='both', expand=True)
         
-        # ============ CARD CADASTRO ============
+        # Cards
         self.criar_card_cadastro(coluna_esquerda)
-        
-        # ============ CARD ESTATÍSTICAS ============
         self.criar_card_estatisticas(coluna_esquerda)
-        
-        # ============ CARD RELATÓRIOS HTML ============
         self.criar_card_relatorios(coluna_esquerda)
-        
-        # ============ TABELA DE VENDAS ============
         self.criar_tabela_vendas(coluna_direita)
-        
-        # ============ BOTÕES DE AÇÃO ============
         self.criar_botoes_acao(coluna_direita)
         
-        # Atualizar dados iniciais
+        # Atualizar dados
         self.atualizar_tabela()
         self.atualizar_stats()
     
@@ -171,9 +135,8 @@ class SistemaVendasProfissional:
         card = tk.Frame(parent, bg=self.cores['bg_secundario'])
         card.pack(fill='x', pady=(0, 20))
         
-        # Título
         tk.Label(card, 
-                text="📝 CADASTRAR VENDA",
+                text="CADASTRAR VENDA",
                 font=('Arial', 14, 'bold'),
                 bg=self.cores['bg_secundario'],
                 fg=self.cores['texto']).pack(pady=(15, 10), padx=20, anchor='w')
@@ -215,7 +178,7 @@ class SistemaVendasProfissional:
         
         self.produto_combo = ttk.Combobox(form, 
                                          values=['Notebook', 'Smartphone', 'Tablet', 'Monitor', 
-                                                 'Mouse', 'Teclado', 'Fone', 'Webcam', 'SSD', 'Memória'],
+                                                 'Mouse', 'Teclado', 'Fone', 'Webcam', 'SSD', 'Memoria'],
                                          font=('Arial', 11), width=23)
         self.produto_combo.grid(row=2, column=1, pady=5, padx=(10, 0), sticky='w')
         
@@ -231,8 +194,8 @@ class SistemaVendasProfissional:
         self.quantidade_entry.grid(row=3, column=1, pady=5, padx=(10, 0), sticky='w')
         self.quantidade_entry.insert(0, "1")
         
-        # Preço
-        tk.Label(form, text="Preço Unitário:",
+        # Preco
+        tk.Label(form, text="Preco Unitario:",
                 font=('Arial', 11),
                 bg=self.cores['bg_secundario'],
                 fg=self.cores['texto_secundario']).grid(row=4, column=0, sticky='w', pady=5)
@@ -242,8 +205,8 @@ class SistemaVendasProfissional:
                                    relief='flat')
         self.preco_entry.grid(row=4, column=1, pady=5, padx=(10, 0), sticky='w')
         
-        # Região
-        tk.Label(form, text="Região:",
+        # Regiao
+        tk.Label(form, text="Regiao:",
                 font=('Arial', 11),
                 bg=self.cores['bg_secundario'],
                 fg=self.cores['texto_secundario']).grid(row=5, column=0, sticky='w', pady=5)
@@ -253,9 +216,9 @@ class SistemaVendasProfissional:
                                         font=('Arial', 11), width=23)
         self.regiao_combo.grid(row=5, column=1, pady=5, padx=(10, 0), sticky='w')
         
-        # Botão Cadastrar
+        # Botao Cadastrar
         btn_cadastrar = tk.Button(card,
-                                 text="✅ CADASTRAR VENDA",
+                                 text="CADASTRAR VENDA",
                                  font=('Arial', 12, 'bold'),
                                  bg=self.cores['verde'],
                                  fg='white',
@@ -265,12 +228,12 @@ class SistemaVendasProfissional:
         btn_cadastrar.pack(pady=(0, 20), padx=20, fill='x')
     
     def criar_card_estatisticas(self, parent):
-        """Criar card de estatísticas rápidas"""
+        """Criar card de estatisticas rapidas"""
         card = tk.Frame(parent, bg=self.cores['bg_secundario'])
         card.pack(fill='x', pady=(0, 20))
         
         tk.Label(card,
-                text="📊 RESUMO RÁPIDO",
+                text="RESUMO RAPIDO",
                 font=('Arial', 14, 'bold'),
                 bg=self.cores['bg_secundario'],
                 fg=self.cores['texto']).pack(pady=(15, 10), padx=20, anchor='w')
@@ -281,25 +244,23 @@ class SistemaVendasProfissional:
         self.stats_frame.pack(pady=15, padx=20, fill='x')
     
     def criar_card_relatorios(self, parent):
-        """Criar card de relatórios HTML"""
+        """Criar card de relatorios HTML"""
         card = tk.Frame(parent, bg=self.cores['bg_secundario'])
         card.pack(fill='x')
         
         tk.Label(card,
-                text="🌐 RELATÓRIOS HTML + CSS",
+                text="RELATORIOS HTML + CSS",
                 font=('Arial', 14, 'bold'),
                 bg=self.cores['bg_secundario'],
                 fg=self.cores['texto']).pack(pady=(15, 10), padx=20, anchor='w')
         
         tk.Frame(card, bg=self.cores['ciano'], height=2).pack(fill='x', padx=20)
         
-        # Botões
         btn_frame = tk.Frame(card, bg=self.cores['bg_secundario'])
         btn_frame.pack(pady=20, padx=20, fill='x')
         
-        # Botão Gerar Relatório
         btn_relatorio = tk.Button(btn_frame,
-                                 text="📊 GERAR RELATÓRIO HTML",
+                                 text="GERAR RELATORIO HTML",
                                  font=('Arial', 11, 'bold'),
                                  bg=self.cores['ciano'],
                                  fg='white',
@@ -309,9 +270,8 @@ class SistemaVendasProfissional:
                                  command=self.gerar_relatorio_html)
         btn_relatorio.pack(fill='x', pady=(0, 10))
         
-        # Botão Visualizar
         btn_visualizar = tk.Button(btn_frame,
-                                  text="👁️ VISUALIZAR ÚLTIMO RELATÓRIO",
+                                  text="VISUALIZAR ULTIMO RELATORIO",
                                   font=('Arial', 11, 'bold'),
                                   bg=self.cores['azul'],
                                   fg='white',
@@ -324,23 +284,20 @@ class SistemaVendasProfissional:
     def criar_tabela_vendas(self, parent):
         """Criar tabela de vendas"""
         tk.Label(parent,
-                text="📋 VENDAS CADASTRADAS",
+                text="VENDAS CADASTRADAS",
                 font=('Arial', 16, 'bold'),
                 bg=self.cores['bg_principal'],
                 fg=self.cores['texto']).pack(anchor='w', pady=(0, 15))
         
-        # Frame da tabela
         tabela_container = tk.Frame(parent, bg=self.cores['bg_secundario'])
         tabela_container.pack(fill='both', expand=True)
         
-        # Scrollbars
         scroll_y = tk.Scrollbar(tabela_container)
         scroll_y.pack(side='right', fill='y')
         
         scroll_x = tk.Scrollbar(tabela_container, orient='horizontal')
         scroll_x.pack(side='bottom', fill='x')
         
-        # Treeview
         self.tree = ttk.Treeview(tabela_container,
                                 columns=('data', 'vendedor', 'produto', 'qtd', 'preco', 'total', 'regiao'),
                                 show='headings',
@@ -350,15 +307,14 @@ class SistemaVendasProfissional:
         scroll_y.config(command=self.tree.yview)
         scroll_x.config(command=self.tree.xview)
         
-        # Configurar colunas
         colunas = [
             ('data', 'Data', 100),
             ('vendedor', 'Vendedor', 120),
             ('produto', 'Produto', 120),
             ('qtd', 'Qtd', 60),
-            ('preco', 'Preço', 100),
+            ('preco', 'Preco', 100),
             ('total', 'Total', 120),
-            ('regiao', 'Região', 100)
+            ('regiao', 'Regiao', 100)
         ]
         
         for col, nome, largura in colunas:
@@ -368,13 +324,12 @@ class SistemaVendasProfissional:
         self.tree.pack(fill='both', expand=True, padx=1, pady=1)
     
     def criar_botoes_acao(self, parent):
-        """Criar botões de ação"""
+        """Criar botoes de acao"""
         botoes_frame = tk.Frame(parent, bg=self.cores['bg_principal'])
         botoes_frame.pack(fill='x', pady=(20, 0))
         
-        # Botão Exportar CSV
         btn_exportar = tk.Button(botoes_frame,
-                                text="💾 EXPORTAR CSV",
+                                text="EXPORTAR CSV",
                                 font=('Arial', 12, 'bold'),
                                 bg=self.cores['roxo'],
                                 fg='white',
@@ -383,9 +338,8 @@ class SistemaVendasProfissional:
                                 command=self.exportar_csv)
         btn_exportar.pack(side='left', padx=(0, 10))
         
-        # Botão Limpar
         btn_limpar = tk.Button(botoes_frame,
-                              text="🗑️ LIMPAR VENDAS",
+                              text="LIMPAR VENDAS",
                               font=('Arial', 12, 'bold'),
                               bg=self.cores['vermelho'],
                               fg='white',
@@ -397,7 +351,6 @@ class SistemaVendasProfissional:
     def cadastrar_venda(self):
         """Cadastrar nova venda"""
         try:
-            # Validações
             if not self.vendedor_entry.get():
                 messagebox.showerror("Erro", "Preencha o nome do vendedor!")
                 return
@@ -407,7 +360,7 @@ class SistemaVendasProfissional:
                 return
             
             if not self.regiao_combo.get():
-                messagebox.showerror("Erro", "Selecione uma região!")
+                messagebox.showerror("Erro", "Selecione uma regiao!")
                 return
             
             qtd = int(self.quantidade_entry.get())
@@ -435,14 +388,13 @@ class SistemaVendasProfissional:
             self.preco_entry.delete(0, tk.END)
             self.regiao_combo.set('')
             
-            # Atualizar interface
             self.atualizar_tabela()
             self.atualizar_stats()
             
-            messagebox.showinfo("Sucesso", "✅ Venda cadastrada com sucesso!")
+            messagebox.showinfo("Sucesso", "Venda cadastrada com sucesso!")
             
         except ValueError:
-            messagebox.showerror("Erro", "Quantidade e Preço devem ser números válidos!")
+            messagebox.showerror("Erro", "Quantidade e Preco devem ser numeros validos!")
     
     def atualizar_tabela(self):
         """Atualizar tabela de vendas"""
@@ -461,7 +413,7 @@ class SistemaVendasProfissional:
             ))
     
     def atualizar_stats(self):
-        """Atualizar estatísticas rápidas"""
+        """Atualizar estatisticas rapidas"""
         for widget in self.stats_frame.winfo_children():
             widget.destroy()
         
@@ -478,9 +430,9 @@ class SistemaVendasProfissional:
         ticket_medio = valor_total / total_vendas
         
         metrics = [
-            ("💰 Vendas Totais:", f"R$ {valor_total:,.2f}", self.cores['verde']),
-            ("📦 Quantidade:", f"{total_vendas} vendas", self.cores['azul']),
-            ("🎫 Ticket Médio:", f"R$ {ticket_medio:,.2f}", self.cores['roxo'])
+            ("Vendas Totais:", f"R$ {valor_total:,.2f}", self.cores['verde']),
+            ("Quantidade:", f"{total_vendas} vendas", self.cores['azul']),
+            ("Ticket Medio:", f"R$ {ticket_medio:,.2f}", self.cores['roxo'])
         ]
         
         for label, valor, cor in metrics:
@@ -498,37 +450,34 @@ class SistemaVendasProfissional:
                     fg=cor).pack(side='right')
     
     def gerar_relatorio_html(self):
-        """Gerar relatório HTML com CSS separado"""
+        """Gerar relatorio HTML com CSS separado"""
         if not self.vendas:
             messagebox.showwarning("Aviso", "Nenhuma venda cadastrada!")
             return
         
         try:
-            # Caminhos dos arquivos
             template_path = self.base_path / 'templates' / 'relatorio.html'
             css_path = self.base_path / 'static/css/estilo.css'
             
-            # Verificar se os arquivos existem
             if not template_path.exists():
                 messagebox.showerror("Erro", 
-                    f"Template HTML não encontrado!\nCrie o arquivo: {template_path}")
+                    f"Template HTML nao encontrado!\nCrie o arquivo: {template_path}")
                 return
             
             if not css_path.exists():
                 messagebox.showerror("Erro",
-                    f"Arquivo CSS não encontrado!\nCrie o arquivo: {css_path}")
+                    f"Arquivo CSS nao encontrado!\nCrie o arquivo: {css_path}")
                 return
             
-            # Carregar template HTML
             with open(template_path, 'r', encoding='utf-8') as f:
                 template = f.read()
             
-            # Calcular métricas
+            # Calcular metricas
             total_vendas = len(self.vendas)
             valor_total = sum(v['total'] for v in self.vendas)
             ticket_medio = valor_total / total_vendas
             
-            # Análises
+            # Analises
             vendas_vendedor = {}
             for v in self.vendas:
                 nome = v['vendedor']
@@ -548,7 +497,7 @@ class SistemaVendasProfissional:
                 vendas_regiao[reg] = vendas_regiao.get(reg, 0) + v['total']
                 qtd_regiao[reg] = qtd_regiao.get(reg, 0) + 1
             
-            # Gerar HTML dinâmico
+            # Gerar HTMLs
             ranking_html = self.gerar_ranking_vendedores(vendas_vendedor, valor_total)
             produtos_html = self.gerar_top_produtos(vendas_produto, quant_produto, valor_total)
             regiao_html = self.gerar_analise_regiao(vendas_regiao, qtd_regiao, valor_total)
@@ -560,9 +509,9 @@ class SistemaVendasProfissional:
             melhor_regiao = max(vendas_regiao.items(), key=lambda x: x[1])
             pior_regiao = min(vendas_regiao.items(), key=lambda x: x[1])
             
-            # Substituir variáveis no template
+            # Substituir variaveis
             html = template
-            html = html.replace('{{DATA_GERACAO}}', datetime.now().strftime('%d/%m/%Y às %H:%M'))
+            html = html.replace('{{DATA_GERACAO}}', datetime.now().strftime('%d/%m/%Y as %H:%M'))
             html = html.replace('{{VALOR_TOTAL}}', f"{valor_total:,.2f}")
             html = html.replace('{{TOTAL_VENDAS}}', str(total_vendas))
             html = html.replace('{{TICKET_MEDIO}}', f"{ticket_medio:,.2f}")
@@ -577,11 +526,11 @@ class SistemaVendasProfissional:
             html = html.replace('{{MELHOR_PRODUTO_VALOR}}', f"{melhor_produto[1]:,.2f}")
             html = html.replace('{{MELHOR_REGIAO}}', melhor_regiao[0])
             html = html.replace('{{MELHOR_REGIAO_PERC}}', f"{(melhor_regiao[1]/valor_total)*100:.1f}%")
-            html = html.replace('{{OPORTUNIDADE}}', f"Expandir na região {pior_regiao[0]}")
+            html = html.replace('{{OPORTUNIDADE}}', f"Expandir na regiao {pior_regiao[0]}")
             html = html.replace('{{OPORTUNIDADE_DETALHE}}', f"R$ {pior_regiao[1]:,.2f} em vendas")
             html = html.replace('{{ASSINATURA}}', "Analista de Dados • Python • HTML • CSS")
             
-            # Salvar relatório
+            # Salvar relatorio
             nome_arquivo = f"relatorio_vendas_{datetime.now().strftime('%Y%m%d_%H%M%S')}.html"
             caminho_arquivo = self.base_path / 'relatorios' / nome_arquivo
             
@@ -592,15 +541,14 @@ class SistemaVendasProfissional:
             
             messagebox.showinfo(
                 "Sucesso", 
-                f"✅ Relatório HTML gerado com sucesso!\n\n📁 {caminho_arquivo}\n\n🎨 CSS: {css_path}"
+                f"Relatorio HTML gerado com sucesso!\n\nArquivo: {caminho_arquivo}"
             )
             
-            # Perguntar se quer visualizar
-            if messagebox.askyesno("Visualizar", "Deseja visualizar o relatório no navegador?"):
+            if messagebox.askyesno("Visualizar", "Deseja visualizar o relatorio no navegador?"):
                 self.visualizar_relatorio(caminho_arquivo)
                 
         except Exception as e:
-            messagebox.showerror("Erro", f"Erro ao gerar relatório:\n{str(e)}")
+            messagebox.showerror("Erro", f"Erro ao gerar relatorio:\n{str(e)}")
     
     def gerar_ranking_vendedores(self, vendas_vendedor, valor_total):
         """Gerar HTML do ranking de vendedores"""
@@ -642,7 +590,7 @@ class SistemaVendasProfissional:
         return html
     
     def gerar_analise_regiao(self, vendas_regiao, qtd_regiao, valor_total):
-        """Gerar HTML da análise por região"""
+        """Gerar HTML da analise por regiao"""
         html = ""
         for reg, valor in sorted(vendas_regiao.items(), key=lambda x: x[1], reverse=True):
             qtd = qtd_regiao[reg]
@@ -661,7 +609,7 @@ class SistemaVendasProfissional:
         return html
     
     def gerar_ultimas_vendas(self):
-        """Gerar HTML das últimas vendas"""
+        """Gerar HTML das ultimas vendas"""
         ultimas_vendas = sorted(self.vendas, key=lambda x: x['data'], reverse=True)[:20]
         html = ""
         for v in ultimas_vendas:
@@ -679,11 +627,11 @@ class SistemaVendasProfissional:
         return html
     
     def visualizar_relatorio(self, caminho):
-        """Visualizar relatório no navegador"""
+        """Visualizar relatorio no navegador"""
         webbrowser.open(f"file://{caminho.absolute()}")
     
     def visualizar_ultimo_relatorio(self):
-        """Visualizar último relatório gerado"""
+        """Visualizar ultimo relatorio gerado"""
         if hasattr(self, 'ultimo_relatorio') and self.ultimo_relatorio.exists():
             self.visualizar_relatorio(self.ultimo_relatorio)
         else:
@@ -692,7 +640,7 @@ class SistemaVendasProfissional:
                 ultimo = max(relatorios, key=lambda x: x.stat().st_mtime)
                 self.visualizar_relatorio(ultimo)
             else:
-                messagebox.showwarning("Aviso", "Nenhum relatório encontrado!")
+                messagebox.showwarning("Aviso", "Nenhum relatorio encontrado!")
     
     def exportar_csv(self):
         """Exportar dados para CSV"""
@@ -750,11 +698,11 @@ class SistemaVendasProfissional:
 
 # ===== EXECUTAR =====
 if __name__ == "__main__":
-    print("🚀 Iniciando Sistema de Vendas Profissional...")
-    print("📁 Estrutura:")
-    print("   ├── templates/relatorio.html  (HTML)")
-    print("   ├── static/css/estilo.css    (CSS)")
-    print("   └── sistema_vendas_separado.py (Python)")
+    print("Iniciando Sistema de Vendas Profissional...")
+    print("Estrutura:")
+    print("  |- templates/relatorio.html  (HTML)")
+    print("  |- static/css/estilo.css    (CSS)")
+    print("  |- sistema_vendas_final.py   (Python)")
     print()
     
     app = SistemaVendasProfissional()
